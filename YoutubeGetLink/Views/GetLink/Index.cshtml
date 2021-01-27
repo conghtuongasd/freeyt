@@ -1,0 +1,16 @@
+﻿
+@model YoutubeGetLink.Models.VideoModel
+
+    <div class="row">
+        @if (Model.IsSuccess)
+        {
+            <video autoplay="autoplay" src="@Model.Url" class="col-12" controls="controls"></video>
+        }
+        else
+        {
+            <p>
+                Không thể get link này!
+            </p>
+        }
+    </div>
+
