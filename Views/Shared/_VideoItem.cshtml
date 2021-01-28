@@ -1,0 +1,13 @@
+﻿@model Models.VideoItemVM
+
+<td valign="top" width="40%">
+    <div class="video-item">
+        <a href="/Watch?v=@Model.Id">
+            <img src="@Model.Thumbnail" width="100%" />
+            <div class="duration">@Model.Duration</div>
+        </a>
+    </div>
+</td>
+<td valign="top" width="60%">
+    <div><a href="/Watch?v=@Model.Id">@Model.Title</a></div>
+</td>

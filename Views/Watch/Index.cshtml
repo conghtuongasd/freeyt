@@ -1,0 +1,37 @@
+﻿@model Models.VideoItemVM
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+<div class="row">
+    <div class="col-md-9">
+        <video style="width: 100%; z-index: -1;" src="@Model.Qualities.First().Uri" autoplay controls></video>
+        <div class="row mr-0 p-0">
+            <h5 class="col-12">@Model.Title</h5>
+            
+            <div class="col-12">
+                <hr />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <table class="video-list">
+            @foreach (var item in Model.NextVideos)
+            {
+            <tr>
+                <td valign="top" width="40%">
+                    <div class="video-item">
+                        <a href="/Watch?v=@item.Id">
+                            <img src="@item.Thumbnail" style="width:100%;" />
+                            <div class="duration">@item.Duration</div>
+                        </a>
+                    </div>
+                </td>
+                <td valign="top" width="60%">
+                    <div><a href="/Watch?v=@item.Id"><strong>@item.Title</strong></a></div>
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>
